@@ -2,18 +2,18 @@ version: "1.27"
 
 services:
 
-  db:
-    image: postgres:15.1
-    container_name: db
-    restart: always
+  backstage-app:
+    container_name: backstage-app
+    build:
+      dockerfile: Dockerfile
+      context: ./backstage-app
     environment:
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      - EXT_BASE_URL=${BACKSTAGE_EXT_BASE_URL}
+      - INT_BASE_URL=${BACKSTAGE_INT_BASE_URL}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
     ports:
-      - 5432:5432
-
-  db-admin:
-    container_name: db-admin
-    image: adminer:4.8.1-standalone
-    restart: always
-    ports:
-      - 8080:8080
+      - 7007:7007
