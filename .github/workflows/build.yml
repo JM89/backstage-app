@@ -1,9 +1,19 @@
 name: Build Backstage App Docker Image 
 
-on: [push]
-jobs:
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
 
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Build docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: false
+          tags: jm89/backstage-app-play:latest
