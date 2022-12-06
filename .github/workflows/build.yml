@@ -17,3 +17,5 @@ jobs:
         with:
           push: false
           tags: jm89/backstage-app-play:latest
+          context: ./backstage-app
+          file: Dockerfile
