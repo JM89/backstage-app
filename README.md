@@ -8,6 +8,7 @@ The pre-requisites are documented [here](https://backstage.io/docs/getting-start
 
 - [x] Backstage application setup (Run as docker container)
 - [x] Integration with Postgres DB (local)
+- [x] Add a custom software template for Python apps
 
 ## Getting Started
 
@@ -21,3 +22,23 @@ docker compose -f docker-compose.yml -f docker-compose-deps.yml --env-file .env 
 
 Go to http://localhost:7007/.
 
+## Usage
+
+### Create a component from a custom template
+
+In this example, we use a custom template I defined previously.
+
+TODO: Instructions here.
+
+<ins>Guidelines</ins>:
+
+<details>
+    <summary>Add your own custom template</summary> 
+    TODO: Instructions here.
+</details>
+
+<details>
+    <summary>Update an existing template</summary> 
+    There is no automation around updating an existing template. 
+    TODO: Instructions here.
+</details>

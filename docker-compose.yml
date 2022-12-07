@@ -8,8 +8,9 @@ services:
       dockerfile: Dockerfile
       context: ./backstage-app
     environment:
-      - EXT_BASE_URL=${BACKSTAGE_EXT_BASE_URL}
-      - INT_BASE_URL=${BACKSTAGE_INT_BASE_URL}
+      - APP_CONFIG_app_baseUrl=${BACKSTAGE_BASE_URL}
+      - APP_CONFIG_backend_baseUrl=${BACKSTAGE_BASE_URL}
+      - APP_CONFIG_cors_origin=${BACKSTAGE_BASE_URL}
       - POSTGRES_HOST=${POSTGRES_HOST}
       - POSTGRES_PORT=${POSTGRES_PORT}
       - POSTGRES_USER=${POSTGRES_USER}
