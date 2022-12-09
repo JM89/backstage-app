@@ -9,6 +9,7 @@ The pre-requisites are documented [here](https://backstage.io/docs/getting-start
 - [x] Backstage application setup (Run as docker container)
 - [x] Integration with Postgres DB (local)
 - [x] Add a custom software template for Python apps
+- [x] Basic Techdocs integration (local)
 
 ## Run the application
 
@@ -21,6 +22,14 @@ docker compose -f docker-compose.yml -f docker-compose-deps.yml --env-file .env 
 ```
 
 Go to http://localhost:7007/.
+
+## Debug the application
+
+To connect to the docker container with root:
+
+```sh
+docker exec -u root -it --workdir / backstage-app bash
+```
 
 ## Usage
 
@@ -163,3 +172,8 @@ SELECT key, value
 FROM "search"
 WHERE entity_id = '40e3e032-2336-4161-bcfb-71da4e059e52'</pre>
 </details>
+
+## Useful Links
+
+- [Software Template Examples](https://github.com/backstage/software-templates/tree/main/scaffolder-templates)
+- [TechDocs Recommended Setup](https://backstage.io/docs/features/techdocs/architecture#recommended-deployment)
